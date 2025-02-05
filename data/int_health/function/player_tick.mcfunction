@@ -12,7 +12,7 @@
 # 表示
     title @s[tag=!IntHealth.ActionbarDisabled] actionbar [ \
         {"text": "❤", "color": "red", "bold": false}, \
-        {"score": {"name": "@s", "objective": "IntHealth.CurrentHealth"}, "color": "gold", "bold": false}, \
+        {"score": {"name": "@s", "objective": "IntHealth.CurrentHealth"}, "color": "red", "bold": false}, \
         {"text": "❤", "color": "red", "bold": false} \
     ]
 
