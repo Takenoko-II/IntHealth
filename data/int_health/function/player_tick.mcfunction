@@ -20,6 +20,6 @@
     execute if score @s IntHealth.DeathCount matches 1.. run function int_health:score_observer/death
 
 # 自然回復の阻止
-    execute if data entity @s {foodLevel: 20} run effect give @s hunger infinite 127 true
+    execute if data entity @s[tag=IntHealth.ShowEmptyHearts] {foodLevel: 20} run effect give @s hunger infinite 127 true
 
-    execute unless data entity @s {foodLevel: 20} run effect clear @s hunger
+    execute unless data entity @s[tag=IntHealth.ShowEmptyHearts] {foodLevel: 20} run effect clear @s hunger
