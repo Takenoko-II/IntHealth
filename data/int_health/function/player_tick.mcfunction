@@ -11,12 +11,15 @@
 
 # 表示
     title @s[tag=!IntHealth.ActionbarDisabled] actionbar [ \
-        {"text": "❤ ", "color": "red", "bold": false}, \
-        {"text": "Health: ", "color": "red", "bold": true}, \
+        {"text": "❤", "color": "red", "bold": false}, \
         {"score": {"name": "@s", "objective": "IntHealth.CurrentHealth"}, "color": "gold", "bold": false}, \
-        {"text": " / ", "color": "red", "bold": false}, \
-        {"score": {"name": "@s", "objective": "IntHealth.MaxHealth"}, "color": "gold", "bold": false} \
+        {"text": "❤", "color": "red", "bold": false} \
     ]
 
 # 死んだとき
     execute if score @s IntHealth.DeathCount matches 1.. run function int_health:score_observer/death
+
+# 自然回復の阻止
+    execute if data entity @s {foodLevel: 20} run effect give @s hunger infinite 127 true
+
+    execute unless data entity @s {foodLevel: 20} run effect clear @s hunger

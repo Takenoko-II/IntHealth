@@ -10,7 +10,9 @@
     function int_health:health_bar/divide
 
 # バーに表示すべき値を取得
-    execute store result storage int_health: Multiply.Input.X float 0.001 run attribute @s max_health base get 1000
+    execute if entity @s[tag=IntHealth.ShowEmptyHearts] store result storage int_health: Multiply.Input.X float 0.001 run attribute @s max_health base get 1000
+
+    execute unless entity @s[tag=IntHealth.ShowEmptyHearts] store result storage int_health: Multiply.Input.X float 1 run scoreboard players get #Default IntHealth.MaxHealth
 
     data modify storage int_health: Multiply.Input.Y set from storage int_health: Divide.Output
 

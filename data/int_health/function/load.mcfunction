@@ -16,8 +16,5 @@
 # 最大体力のデフォルト値
     scoreboard players set #Default IntHealth.MaxHealth 20
 
-# ゲームルール変更
-    gamerule naturalRegeneration false
-
 # load
     forceload add 0 0
